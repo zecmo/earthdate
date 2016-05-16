@@ -7,19 +7,26 @@
 //
 
 #import "ViewController.h"
+#import "TransientContainer.h"
 
 @interface ViewController () {
     __weak IBOutlet UIDatePicker *earthdatePicker;
     __weak IBOutlet UITextView *textView;
+    
+    NSMutableDictionary *appData;
 }
 
 @end
 
 @implementation ViewController
 
+#pragma mark - PickerDelegates
+
 - (IBAction)earthdatePicker:(UIDatePicker *)sender {
+    
 }
 
+// When the copy button is pressed
 - (IBAction)copyEarthdate:(UIButton *)sender {
     NSDate *eDate = earthdatePicker.date;
     NSCalendar *calendar = earthdatePicker.calendar;
@@ -31,9 +38,18 @@
     int earthDate = [self calculateEarthDay:day fromMonth:mon andYear:year];
     NSString *earthdateString = [NSString stringWithFormat:@"#earthdate %i.%i", year, earthDate];
     
-    textView.text = earthdateString;    
+    textView.text = earthdateString;
+    
+    // Decide what data needs to be saved
+    [self updateData];
+    
+    // Actually save
+    [self saveData];
 }
 
+#pragma mark - Helpers
+
+// A calculation method
 - (int)calculateEarthDay:(int)day fromMonth:(int)month andYear:(int)year {
     int earthDate = day;
 
@@ -81,9 +97,33 @@
     return earthDate;
 }
 
+#pragma mark - Data Handling
+
+- (void)updateData {
+    // TODO: perform necessary things to update the appData
+    // appData <-- do stuff to it
+}
+
+- (void)saveData {
+    [[TransientContainer sharedInstance] setContentForKey:@"data" data:appData];
+    [[TransientContainer sharedInstance] saveToDisk];
+}
+
+- (void)loadData {
+    // Load whatever on disk into "saveData"
+    NSDictionary *saveData = [[TransientContainer sharedInstance] getContentForKey:@"data"];
+    
+    // Super fancy if-check: if saveData exists, then set appData to it, else create a new one.
+    appData = saveData ? saveData : @{}.mutableCopy;
+}
+
+#pragma mark - Initialization
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self loadData];
 }
 
 - (void)didReceiveMemoryWarning {

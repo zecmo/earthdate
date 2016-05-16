@@ -15,6 +15,7 @@
 		562AC43F1CCDEFB700D86997 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 562AC43D1CCDEFB700D86997 /* LaunchScreen.storyboard */; };
 		562AC44A1CCDEFB700D86997 /* earthdateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 562AC4491CCDEFB700D86997 /* earthdateTests.m */; };
 		562AC4551CCDEFB700D86997 /* earthdateUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 562AC4541CCDEFB700D86997 /* earthdateUITests.m */; };
+		56709B431CE96171009BA60F /* TransientContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 56709B411CE96171009BA60F /* TransientContainer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		562AC4501CCDEFB700D86997 /* earthdateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = earthdateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		562AC4541CCDEFB700D86997 /* earthdateUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = earthdateUITests.m; sourceTree = "<group>"; };
 		562AC4561CCDEFB700D86997 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56709B411CE96171009BA60F /* TransientContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransientContainer.m; sourceTree = "<group>"; };
+		56709B421CE96171009BA60F /* TransientContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransientContainer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,13 +106,15 @@
 			children = (
 				562AC4321CCDEFB600D86997 /* AppDelegate.h */,
 				562AC4331CCDEFB600D86997 /* AppDelegate.m */,
+				562AC43B1CCDEFB700D86997 /* Assets.xcassets */,
+				562AC4401CCDEFB700D86997 /* Info.plist */,
+				562AC43D1CCDEFB700D86997 /* LaunchScreen.storyboard */,
+				562AC4381CCDEFB600D86997 /* Main.storyboard */,
+				562AC42F1CCDEFB600D86997 /* Supporting Files */,
+				56709B421CE96171009BA60F /* TransientContainer.h */,
+				56709B411CE96171009BA60F /* TransientContainer.m */,
 				562AC4351CCDEFB600D86997 /* ViewController.h */,
 				562AC4361CCDEFB600D86997 /* ViewController.m */,
-				562AC4381CCDEFB600D86997 /* Main.storyboard */,
-				562AC43B1CCDEFB700D86997 /* Assets.xcassets */,
-				562AC43D1CCDEFB700D86997 /* LaunchScreen.storyboard */,
-				562AC4401CCDEFB700D86997 /* Info.plist */,
-				562AC42F1CCDEFB600D86997 /* Supporting Files */,
 			);
 			path = earthdate;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 			files = (
 				562AC4371CCDEFB600D86997 /* ViewController.m in Sources */,
 				562AC4341CCDEFB600D86997 /* AppDelegate.m in Sources */,
+				56709B431CE96171009BA60F /* TransientContainer.m in Sources */,
 				562AC4311CCDEFB600D86997 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +504,7 @@
 				562AC45B1CCDEFB700D86997 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		562AC45C1CCDEFB700D86997 /* Build configuration list for PBXNativeTarget "earthdateTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +513,7 @@
 				562AC45E1CCDEFB700D86997 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		562AC45F1CCDEFB700D86997 /* Build configuration list for PBXNativeTarget "earthdateUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +522,7 @@
 				562AC4611CCDEFB700D86997 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
